@@ -1,0 +1,94 @@
+/* ================= Services Section ================= */
+.services-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 100px 40px;
+  font-family: 'Noto Serif JP', serif;
+  overflow: hidden;
+}
+
+/* Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  font-size: 1.2rem;
+  color: #c9a063;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Individual Service Card */
+.service-card {
+  background: #111;
+  border: 1px solid rgba(201, 160, 99, 0.3);
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: fadeInUp 1s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(201, 160, 99, 0.3);
+}
+
+/* Icon */
+.service-icon {
+  margin-bottom: 20px;
+  color: #c9a063;
+}
+
+/* Title */
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #c9a063;
+}
+
+/* Description */
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ================= Animations ================= */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered animation delays */
+.service-card.card-0 { animation-delay: 0.1s; }
+.service-card.card-1 { animation-delay: 0.2s; }
+.service-card.card-2 { animation-delay: 0.3s; }
+
+/* ================= Mobile ================= */
+@media (max-width: 768px) {
+  .services-header h2 {
+    font-size: 2rem;
+  }
+  .services-header p {
+    font-size: 1rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

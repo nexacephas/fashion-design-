@@ -1,0 +1,173 @@
+.booking-section {
+  background: linear-gradient(135deg, #0a0a0a, #111, #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradientAnim 15s ease infinite;
+  color: #fff;
+  padding: 100px 40px;
+  font-family: 'Noto Serif JP', serif;
+}
+
+@keyframes gradientAnim {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.booking-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.booking-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.booking-header .section-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.booking-header .section-subtitle {
+  font-size: 1.2rem;
+  color: #c9a063;
+}
+
+/* ==================== Booking Content ==================== */
+.booking-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left Contact Info */
+.booking-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-left h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.booking-contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: #c9a063;
+}
+
+.booking-contact-info div svg {
+  color: #c9a063;
+}
+
+/* Right Booking Form */
+.booking-right {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(201, 160, 99, 0.2);
+}
+
+/* Floating Labels */
+.floating-label {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.floating-label input,
+.floating-label textarea,
+.floating-label select {
+  width: 100%;
+  padding: 14px 12px;
+  background: transparent;
+  border: 1px solid rgba(201,160,99,0.4);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.floating-label input:focus,
+.floating-label textarea:focus,
+.floating-label select:focus {
+  border-color: #c9a063;
+  box-shadow: 0 0 12px rgba(201,160,99,0.6);
+}
+
+.floating-label label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label,
+.floating-label select:focus + label,
+.floating-label select:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #c9a063;
+  background: rgba(10,10,10,0.8);
+  padding: 0 4px;
+}
+
+/* Submit Button */
+.btn-primary {
+  margin-top: 20px;
+  padding: 14px 20px;
+  background: transparent;
+  border: 1px solid #c9a063;
+  color: #c9a063;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #c9a063;
+  color: #0a0a0a;
+  transform: scale(1.03);
+}
+
+/* Status Message */
+.form-status {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+/* ================= Mobile ================= */
+@media (max-width: 992px) {
+  .booking-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-header .section-title {
+    font-size: 2rem;
+  }
+  .booking-header .section-subtitle {
+    font-size: 1rem;
+  }
+  .booking-right {
+    padding: 30px 20px;
+  }
+}

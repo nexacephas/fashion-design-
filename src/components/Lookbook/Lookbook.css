@@ -1,0 +1,126 @@
+/* ================= Lookbook Section ================= */
+.lookbook-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 80px 40px;
+  font-family: 'Noto Serif JP', serif;
+  overflow: hidden;
+}
+
+/* Hero Image */
+.lookbook-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  margin-bottom: 60px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.lookbook-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lookbook-hero:hover img {
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  color: #c9a063;
+}
+
+.hero-overlay h2 {
+  font-size: 3rem;
+  letter-spacing: 0.05em;
+}
+
+/* Asymmetric Grid */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Items */
+.lookbook-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  animation: fadeInUp 1s ease forwards;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease;
+}
+
+.lookbook-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.lookbook-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay for titles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lookbook-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: #c9a063;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered animation delays */
+.lookbook-item.item-0 { animation-delay: 0.1s; }
+.lookbook-item.item-1 { animation-delay: 0.2s; }
+.lookbook-item.item-2 { animation-delay: 0.3s; }
+.lookbook-item.item-3 { animation-delay: 0.4s; }
+.lookbook-item.item-4 { animation-delay: 0.5s; }
+
+/* ================= Mobile ================= */
+@media (max-width: 768px) {
+  .lookbook-hero {
+    height: 50vh;
+  }
+  .hero-overlay h2 {
+    font-size: 2rem;
+    left: 20px;
+  }
+  .lookbook-grid {
+    grid-template-columns: 1fr;
+  }
+}

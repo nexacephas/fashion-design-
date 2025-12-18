@@ -1,0 +1,139 @@
+/* ================= Footer ================= */
+.site-footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 80px 40px 40px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Serif JP', serif;
+}
+
+/* Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  gap: 40px;
+}
+
+/* Brand */
+.footer-brand img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  max-width: 250px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+}
+
+/* Quick Links */
+.footer-links h4,
+.footer-contact h4 {
+  color: #c9a063;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background: #c9a063;
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #c9a063;
+}
+
+.footer-links ul li a:hover::after {
+  width: 100%;
+}
+
+/* Contact */
+.footer-contact p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Social icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.footer-social a {
+  color: #c9a063;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(201,160,99,0.3);
+  padding-top: 20px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+/* ================= Animations / Effects ================= */
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(201,160,99,0.08) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.site-footer * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= Mobile ================= */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}

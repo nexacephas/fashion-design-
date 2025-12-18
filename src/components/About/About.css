@@ -1,0 +1,145 @@
+/* ================= About Section ================= */
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Noto Serif JP', serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+.about-container {
+  position: relative;
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ================= Image ================= */
+.about-image-container {
+  flex: 1;
+  min-width: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease;
+}
+
+.about-image-container:hover .about-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+  pointer-events: none;
+}
+
+/* ================= Text Box ================= */
+.about-text-box {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(0,0,0,0.7);
+  padding: 40px;
+  border-left: 2px solid #c9a063;
+  position: relative;
+  z-index: 2;
+  animation: fadeInText 1s ease forwards;
+}
+
+.headline {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.subheadline {
+  font-size: 1.2rem;
+  color: #c9a063;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.body-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+/* CTA Button */
+.about-cta {
+  padding: 12px 30px;
+  border: 1px solid #c9a063;
+  background: transparent;
+  color: #c9a063;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-cta:hover {
+  background: #c9a063;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* ================= Animations ================= */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= Mobile ================= */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-text-box {
+    border-left: none;
+    border-top: 2px solid #c9a063;
+    padding: 30px;
+  }
+
+  .headline {
+    font-size: 2rem;
+  }
+
+  .subheadline {
+    font-size: 1.1rem;
+  }
+
+  .body-text {
+    font-size: 0.95rem;
+  }
+
+  .about-cta {
+    padding: 10px 24px;
+    font-size: 16px;
+  }
+}
