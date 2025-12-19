@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom"; // 👈 import Link
 import "./Hero.css";
-import heroVideo from "../../assets/5759060-uhd_2160_3840_30fps.mp4"; // Replace with your video
-// Optional fallback image
+import heroVideo from "../../assets/5759060-uhd_2160_3840_30fps.mp4";
 import heroImage from "../../assets/15 Top Winter Fashion Trends To Stay Current (2024 Looks).jpg";
 
 export default function Hero() {
@@ -27,13 +27,16 @@ export default function Hero() {
       <div className="hero-content">
         <h1 className="hero-title">Elevate Your Style</h1>
         <p className="hero-subtitle">Luxury fashion, tailored for you</p>
+
         <div className="hero-buttons">
           <a href="#lookbook" className="hero-btn primary-btn">
             Shop Now
           </a>
-          <a href="/booking" className="hero-btn secondary-btn">
+
+          {/* ✅ Book a Stylist now works */}
+          <Link to="/booking" className="hero-btn secondary-btn">
             Book a Stylist
-          </a>
+          </Link>
         </div>
       </div>
     </section>
