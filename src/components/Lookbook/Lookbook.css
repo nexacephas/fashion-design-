@@ -1,9 +1,8 @@
-/* ================= Lookbook Section ================= */
 .lookbook-section {
   background: #0a0a0a;
   color: #fff;
   padding: 80px 40px;
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Playfair Display', serif;
   overflow: hidden;
 }
 
@@ -14,14 +13,15 @@
   height: 70vh;
   margin-bottom: 60px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.7);
 }
 
 .lookbook-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
 
 .lookbook-hero:hover img {
@@ -38,6 +38,7 @@
 .hero-overlay h2 {
   font-size: 3rem;
   letter-spacing: 0.05em;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 /* Asymmetric Grid */
@@ -45,18 +46,16 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  align-items: start;
 }
 
 /* Individual Items */
 .lookbook-item {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  animation: fadeInUp 1s ease forwards;
-  transform: translateY(20px);
-  opacity: 0;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .lookbook-item img {
@@ -64,7 +63,8 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  border-radius: 12px;
+  transition: transform 0.6s ease;
 }
 
 .lookbook-item:hover img {
@@ -98,20 +98,16 @@
   text-transform: uppercase;
 }
 
-/* ================= Animations ================= */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+/* Responsive */
+@media (max-width: 1024px) {
+  .lookbook-hero {
+    height: 60vh;
+  }
+  .hero-overlay h2 {
+    font-size: 2.5rem;
+  }
 }
 
-/* Staggered animation delays */
-.lookbook-item.item-0 { animation-delay: 0.1s; }
-.lookbook-item.item-1 { animation-delay: 0.2s; }
-.lookbook-item.item-2 { animation-delay: 0.3s; }
-.lookbook-item.item-3 { animation-delay: 0.4s; }
-.lookbook-item.item-4 { animation-delay: 0.5s; }
-
-/* ================= Mobile ================= */
 @media (max-width: 768px) {
   .lookbook-hero {
     height: 50vh;

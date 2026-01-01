@@ -1,34 +1,45 @@
 /* Navbar Container */
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 20px; /* slightly away from top for premium floating effect */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1400px;
   height: 64px;
   z-index: 1000;
-  background: transparent;
-  transition: background 0.4s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.1); /* transparent glass */
+  backdrop-filter: blur(12px); /* frosted glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px; /* rounded corners */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
 }
 
+/* Scrolled Navbar */
 .navbar.scrolled {
-  background: #000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.5); /* subtle dark glass on scroll */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 /* Inner container */
 .navbar-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
+  padding: 0 20px;
 }
 
 /* Logo */
 .navbar-logo img {
-  height: 80px;
+  height: 60px;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05);
 }
 
 /* Navigation Links */
@@ -44,7 +55,7 @@
 .navbar-links a {
   background: none;
   border: none;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
   font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -67,7 +78,7 @@
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 1px;
+  height: 2px;
   background: #fff;
   transition: width 0.3s ease;
 }
@@ -81,6 +92,7 @@
 .nav-book {
   padding: 6px 14px;
   border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
   transition: all 0.3s ease;
 }
 
@@ -109,7 +121,7 @@
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: #000;
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
     justify-content: center;
     align-items: center;

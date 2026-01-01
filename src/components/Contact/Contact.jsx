@@ -38,8 +38,8 @@ const Contact = () => {
   };
 
   const infoItems = [
-    { icon: <FiMail />, text: 'tephilahfashion@gmail.com' },
-    { icon: <FiPhone />, text: '+234 000 000 0000' },
+    { icon: <FiMail />, text: 'ibidolaaduragbemi@gmail.com@gmail.com' },
+    { icon: <FiPhone />, text: '+234 8151 352 410' },
     { icon: <FiMapPin />, text: 'Lagos, Nigeria' }
   ];
 
@@ -52,12 +52,13 @@ const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
+
         {/* Header */}
         <motion.div
           className="contact-header"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
           <h2 className="section-title">Let’s Connect</h2>
@@ -67,49 +68,48 @@ const Contact = () => {
         </motion.div>
 
         {/* Left Info */}
-        <motion.div 
+        <motion.div
           className="contact-left"
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h3>Get in Touch</h3>
+          <h3>Contact Information</h3>
           <p>Reach us directly through any of the following channels:</p>
 
           <motion.div className="contact-info">
             {infoItems.map((item, idx) => (
-              <motion.div key={idx}
+              <motion.div
+                key={idx}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: idx * 0.2 }}
               >
-                {item.icon} {item.text}
+                {item.icon} <span>{item.text}</span>
               </motion.div>
             ))}
           </motion.div>
 
           <div className="contact-note">
             <p><strong>Office Hours:</strong> Mon–Fri, 9AM – 5PM</p>
-            <p><strong>Follow us:</strong> Facebook • Instagram • WhatsApp</p>
-          </div>
-
-          {/* Floating Social Icons */}
-          <div className="social-icons">
-            {socialIcons.map((s, i) => (
-              <a key={i} href={s.link}>{s.icon}</a>
-            ))}
+            <p><strong>Follow us:</strong></p>
+            <div className="contact-social-inline">
+              {socialIcons.map((s, i) => (
+                <a key={i} href={s.link}>{s.icon}</a>
+              ))}
+            </div>
           </div>
         </motion.div>
 
         {/* Right Form */}
-        <motion.form 
+        <motion.form
           className="contact-right"
           onSubmit={handleSubmit}
           data-captcha="true"
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
           <div className="form-group">
@@ -135,6 +135,8 @@ const Contact = () => {
             type="submit" 
             className="btn-primary"
             disabled={loading}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
           >
             {loading ? 'Sending...' : 'Send Message'}
           </motion.button>

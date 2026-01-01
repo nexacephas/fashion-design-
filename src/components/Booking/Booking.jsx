@@ -36,9 +36,20 @@ const Booking = () => {
     }
   };
 
+  const fields = [
+    { name: "name", label: "Full Name", type: "text" },
+    { name: "email", label: "Email Address", type: "email" },
+    { name: "phone", label: "Phone Number", type: "text" },
+    { name: "whatsapp", label: "WhatsApp Number", type: "text" },
+    { name: "state", label: "State", type: "text" },
+    { name: "city", label: "City", type: "text" },
+    { name: "address", label: "Full Address", type: "text" },
+  ];
+
   return (
     <section className="booking-section" id="booking">
       <div className="booking-container">
+        {/* Header */}
         <motion.div 
           className="booking-header"
           initial={{ opacity: 0, y: -20 }}
@@ -81,22 +92,27 @@ const Booking = () => {
             viewport={{ once: true }}
           >
             <div className="form-group">
-              {[
-                { name: "name", label: "Full Name", type: "text" },
-                { name: "email", label: "Email Address", type: "email" },
-                { name: "phone", label: "Phone Number", type: "text" },
-                { name: "whatsapp", label: "WhatsApp Number", type: "text" },
-                { name: "state", label: "State", type: "text" },
-                { name: "city", label: "City", type: "text" },
-                { name: "address", label: "Full Address", type: "text" },
-              ].map((field) => (
-                <div className="floating-label" key={field.name}>
+              {fields.map((field, idx) => (
+                <motion.div 
+                  className="floating-label"
+                  key={field.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
                   <input type={field.type} name={field.name} required placeholder=" " />
                   <label>{field.label}</label>
-                </div>
+                </motion.div>
               ))}
 
-              <div className="floating-label">
+              <motion.div 
+                className="floating-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                viewport={{ once: true }}
+              >
                 <select name="service" required>
                   <option value="">Select Service</option>
                   <option value="Custom Clothing">Custom Clothing Design</option>
@@ -104,27 +120,54 @@ const Booking = () => {
                   <option value="Consultation">Styling & Consultation</option>
                 </select>
                 <label>Service Type</label>
-              </div>
+              </motion.div>
 
-              <div className="floating-label">
+              <motion.div 
+                className="floating-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 }}
+                viewport={{ once: true }}
+              >
                 <input type="date" name="bookingDate" required placeholder=" " />
                 <label>Preferred Date</label>
-              </div>
+              </motion.div>
 
-              <div className="floating-label">
+              <motion.div 
+                className="floating-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 }}
+                viewport={{ once: true }}
+              >
                 <input type="time" name="bookingTime" required placeholder=" " />
                 <label>Preferred Time</label>
-              </div>
+              </motion.div>
 
-              <div className="floating-label">
+              <motion.div 
+                className="floating-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.1 }}
+                viewport={{ once: true }}
+              >
                 <textarea name="additionalInfo" rows="5" placeholder=" "></textarea>
                 <label>Additional Details / Requirements</label>
-              </div>
+              </motion.div>
             </div>
 
-            <button type="submit" className="btn-primary" disabled={loading}>
+            <motion.button 
+              type="submit" 
+              className="btn-primary"
+              disabled={loading}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.2 }}
+              viewport={{ once: true }}
+            >
               {loading ? 'Submitting...' : 'Submit Booking'}
-            </button>
+            </motion.button>
+
             {status && <p className="form-status">{status}</p>}
           </motion.form>
         </div>

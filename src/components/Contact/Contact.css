@@ -1,4 +1,3 @@
-/* ================= Contact Section ================= */
 .contact-section {
   position: relative;
   background: linear-gradient(135deg, #0a0a0a, #111, #0a0a0a);
@@ -15,42 +14,35 @@
   100% {background-position: 0% 50%;}
 }
 
-/* Container - Grid Layout */
+/* Grid layout for desktop */
 .contact-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
   max-width: 1400px;
   margin: 0 auto;
   align-items: start;
+  position: relative;
 }
 
 /* Header */
 .contact-header {
+  grid-column: 1 / -1;
   text-align: center;
-  width: 100%;
   margin-bottom: 60px;
 }
 
-.contact-header .section-title {
+.section-title {
   font-size: 2.8rem;
   margin-bottom: 10px;
 }
 
-.contact-header .section-subtitle {
+.section-subtitle {
   font-size: 1.2rem;
   color: #c9a063;
 }
 
-/* ================= Columns ================= */
-
-/* Left Contact Info */
-.contact-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* Left Column */
 .contact-left h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -58,23 +50,21 @@
 }
 
 .contact-left p {
-  margin-bottom: 20px;
-  line-height: 1.6;
   color: rgba(255,255,255,0.85);
+  margin-bottom: 15px;
 }
 
 .contact-info div {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 12px;
   font-size: 1rem;
+  margin-bottom: 12px;
   cursor: pointer;
 }
 
 .contact-info div svg {
   color: #c9a063;
-  flex-shrink: 0;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -83,44 +73,32 @@
   filter: drop-shadow(0 0 6px #c9a063);
 }
 
-/* Floating Social Icons */
-.social-icons {
-  position: absolute;
-  top: 50%;
-  right: -50px;
-  transform: translateY(-50%);
+.contact-social-inline {
   display: flex;
-  flex-direction: column;
   gap: 15px;
+  margin-top: 10px;
 }
 
-.social-icons a {
+.contact-social-inline a {
+  font-size: 1.4rem;
   color: #c9a063;
-  font-size: 1.5rem;
   transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
+.contact-social-inline a:hover {
   transform: scale(1.3);
   color: #fff;
 }
 
-/* Right Form */
+/* Right Column */
 .contact-right {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(12px);
   padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(201, 160, 99, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(201, 160, 99, 0.2);
 }
 
-.contact-right .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Floating Labels */
 .floating-label {
   position: relative;
 }
@@ -131,7 +109,7 @@
   padding: 14px 12px;
   background: transparent;
   border: 1px solid rgba(201,160,99,0.4);
-  border-radius: 8px;
+  border-radius: 12px;
   color: #fff;
   font-size: 1rem;
   outline: none;
@@ -141,13 +119,13 @@
 .floating-label input:focus,
 .floating-label textarea:focus {
   border-color: #c9a063;
-  box-shadow: 0 0 12px rgba(201,160,99,0.6);
+  box-shadow: 0 0 14px rgba(201,160,99,0.6);
 }
 
 .floating-label label {
   position: absolute;
   top: 50%;
-  left: 12px;
+  left: 14px;
   transform: translateY(-50%);
   color: rgba(255,255,255,0.5);
   font-size: 1rem;
@@ -176,7 +154,7 @@
   color: #c9a063;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -193,28 +171,26 @@
   font-size: 0.95rem;
 }
 
-/* ================= Mobile ================= */
+/* Responsive */
 @media (max-width: 992px) {
   .contact-container {
-    grid-template-columns: 1fr; /* Stack columns */
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 60px;
   }
-  .social-icons {
-    position: static;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
+
+  .contact-left {
+    order: 2;
   }
+
   .contact-right {
-    padding: 30px 20px;
+    order: 1;
   }
 }
 
 @media (max-width: 576px) {
-  .contact-header .section-title {
-    font-size: 2rem;
-  }
-  .contact-header .section-subtitle {
-    font-size: 1rem;
-  }
+  .section-title { font-size: 2rem; }
+  .section-subtitle { font-size: 1rem; }
+  .contact-right { padding: 30px 20px; }
+  .floating-label input,
+  .floating-label textarea { padding: 12px 10px; }
 }
